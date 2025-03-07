@@ -102,6 +102,13 @@ pushd $install_dir
 popd
 
 #=================================================
+# CREATE DB TABLES
+#=================================================
+ynh_script_progression "Initializing database..."
+
+ynh_psql_db_shell < $install_dir/tables.pg.sql
+
+#=================================================
 # FINALIZE APP INSTALL WITH CURL
 #=================================================
 ynh_script_progression "Finalizing installation..."
