@@ -106,7 +106,7 @@ popd
 #=================================================
 ynh_script_progression "Initializing database..."
 
-ynh_psql_db_shell < $install_dir/tables.pg.sql
+PGPASSWORD="$db_pwd" psql -h localhost -f $install_dir/tables.pg.sql $db_name $db_user
 
 #=================================================
 # FINALIZE APP INSTALL WITH CURL
