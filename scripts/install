@@ -71,8 +71,8 @@ ynh_config_add --template="config.inc.php" --destination="$install_dir/config.in
 ### You may need to use chmod 600 instead of 400,
 ### for example if the app is expected to be able to modify its own config
 
-#chmod 400 "$install_dir/config.inc.php"
-#chown "$app:$app" "$install_dir/config.inc.php"
+chmod 400 "$install_dir/config.inc.php"
+chown "$app:$app" "$install_dir/config.inc.php"
 
 ### For more complex cases where you want to replace stuff using regexes,
 ### you shoud rely on ynh_replace_string (which is basically a wrapper for sed)

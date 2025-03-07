@@ -60,6 +60,8 @@ ram.runtime = "50M"
     # of explanation regarding the behavior and properties for each of those
     # https://yunohost.org/packaging_apps_resources
 
+    [resources.system_user]
+
     [resources.install_dir]
 
     [resources.sources]
