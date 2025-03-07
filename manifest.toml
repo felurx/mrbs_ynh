@@ -25,7 +25,7 @@ yunohost = '>= 11.2.30'
 helpers_version = "2.1"
 # List of supported archs using the dpkg --print-architecture nomenclature (amd64/i386/armhf/arm64), for example: ["amd64", "i386']
 architectures = "all" 
-multi_instance = false
+multi_instance = "true"
 ldap = "true" 
 sso = "true"
 disk = "50M"
@@ -59,6 +59,8 @@ ram.runtime = "50M"
     # See the packaging documentation for the full set
     # of explanation regarding the behavior and properties for each of those
     # https://yunohost.org/packaging_apps_resources
+
+    [resources.install_dir]
 
     [resources.sources]
 
