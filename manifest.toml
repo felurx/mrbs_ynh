@@ -1,0 +1,84 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/master/schemas/manifest.v2.schema.json
+
+packaging_format = 2
+
+id = "mrbs"
+name = "MRBS"
+
+description.en = "Meeting Room Booking System - Book rooms or other resources"
+description.fr = "TODO"
+
+version = "1.11.6~ynh1"
+
+maintainers = ["felurx"]
+
+[upstream]
+license = "GPL-2.0-only"
+website = "https://mrbs.sourceforge.io"
+demo = "https://mrbs.sourceforge.io/demo.php"
+admindoc = "https://mrbs.sourceforge.io/docs.php"
+
+code = "https://github.com/meeting-room-booking-system/mrbs-code"
+
+[integration]
+yunohost = '>= 11.2.30'
+helpers_version = "2.1"
+# List of supported archs using the dpkg --print-architecture nomenclature (amd64/i386/armhf/arm64), for example: ["amd64", "i386']
+architectures = "all" 
+multi_instance = false
+ldap = "true" 
+sso = "true"
+disk = "50M"
+ram.build = "50M"
+ram.runtime = "50M"
+
+[install]
+
+    [install.domain]
+    # this is a generic question - ask strings are automatically handled by YunoHost's core
+    type = "domain"
+
+    [install.path]
+    # this is a generic question - ask strings are automatically handled by YunoHost's core
+    type = "path"
+    default = "/mrbs"
+
+    [install.init_main_permission]
+    # this is a generic question - ask strings are automatically handled by YunoHost's core
+    # This won't be saved as setting and will instead be used to initialize the SSOwat permission
+    type = "group"
+    default = "all_users"
+
+    [install.init_admin_permission]
+    # this is a generic question - ask strings are automatically handled by YunoHost's core
+    # This won't be saved as setting and will instead be used to initialize the SSOwat permission
+    type = "group"
+    default = "admins"
+
+[resources]
+    # See the packaging documentation for the full set
+    # of explanation regarding the behavior and properties for each of those
+    # https://yunohost.org/packaging_apps_resources
+
+    [resources.sources]
+
+        [resources.sources.main]
+        url = "https://github.com/meeting-room-booking-system/mrbs-code/archive/refs/tags/v1.11.6.tar.gz"
+        sha256 = "9a647f4236eb30c07783e42078a79480c95684ac5ff5f0c07b430c8c696377d4"
+
+        # You might want to add an "autoupdate strategy" setting to that your app receive automated pull request with each new update, which also trigger automated testing.
+        autoupdate.strategy = "latest_github_release"
+
+    [resources.permissions]
+    # This will configure SSOwat permission for $domain/$path/
+    # The initial allowed group of user is configured via the init_main_permission question (public=visitors, private=all_users)
+    main.url = "/"
+
+    [resources.apt]
+    # This will automatically install/uninstall the following apt packages
+    # and implicitly define the $php_version setting as 8.3 (if php8.3-foobar dependencies are listed)
+    packages = "php8.3, php8.3-common, postgresql "
+
+    [resources.database]
+    # This will automatically provision/deprovision a database and store the corresponding credentials in settings $db_user, $db_name, $db_pwd
+    type = "postgresql"
