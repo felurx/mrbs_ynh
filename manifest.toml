@@ -81,7 +81,7 @@ ram.runtime = "50M"
     [resources.apt]
     # This will automatically install/uninstall the following apt packages
     # and implicitly define the $php_version setting as 8.3 (if php8.3-foobar dependencies are listed)
-    packages = "php8.3, php8.3-common, postgresql "
+    packages = "php8.3, php8.3-common, php8.3-intl, php8.3-pgsql, postgresql"
 
     [resources.database]
     # This will automatically provision/deprovision a database and store the corresponding credentials in settings $db_user, $db_name, $db_pwd
