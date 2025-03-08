@@ -96,9 +96,8 @@ $ldap_user_attrib = "uid";
 $ldap_name_attrib = "displayname";
 $ldap_filter = "&(|(objectclass=posixAccount))(permission=cn=__APP__.main,ou=permission,dc=yunohost,dc=org)";
 $ldap_filter_base_dn = $ldap_base_dn;
-// TODO: Enable admin access
-//$ldap_group_member_attrib = 'permission';
-//$ldap_admin_group_dn = 'cn=__APP__.admin,ou=permission,dc=yunohost,dc=org';
+$ldap_group_member_attrib = 'permission';
+$ldap_admin_group_dn = 'cn=__APP__.admin,ou=permission,dc=yunohost,dc=org';
 
 // CUSTOMIZATION
 // TODO: Pick good defaults
