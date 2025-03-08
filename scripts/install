@@ -53,6 +53,8 @@ chown -R $app:www-data "$install_dir"
 #=================================================
 ynh_script_progression "Adding app's configuration file..."
 
+timezone="$(cat /etc/timezone)"
+
 ### You can add specific configuration files.
 ###
 ### Typically, put your template conf file in ../conf/your_config_file

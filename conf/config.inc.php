@@ -40,9 +40,8 @@ require_once 'lib/autoload.inc';
 // timezone the web server runs in.  See the INSTALL document for more information.
 //
 // A list of valid timezones can be found at http://php.net/manual/timezones.php
-// The following line must be uncommented by removing the '//' at the beginning
-// TODO: Ask for TZ during install!
-$timezone = "Europe/Berlin";
+// Is set to the server timezone during install
+$timezone = "__TIMEZONE__";
 
 
 /*******************
