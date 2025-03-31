@@ -71,7 +71,6 @@ ynh_config_add_nginx
 ynh_script_progression "Upgrading app configurations for $app..."
 
 # Upgrade/overwrite config-ynh.inc.php
-timezone=$(ynh_app_setting_get --key=timezone)
 ynh_backup_if_checksum_is_different "$install_dir/web/config-ynh.inc.php"
 ynh_config_add --template="config-ynh.inc.php" --destination="$install_dir/web/config-ynh.inc.php"
 
