@@ -73,7 +73,7 @@ ynh_config_add --template="config.inc.php" --destination="$install_dir/web/confi
 ### You may need to use chmod 600 instead of 400,
 ### for example if the app is expected to be able to modify its own config
 
-chmod 400 "$install_dir/web/config.inc.php"
+chmod 600 "$install_dir/web/config.inc.php"
 chown "$app:$app" "$install_dir/web/config.inc.php"
 
 ### For more complex cases where you want to replace stuff using regexes,
@@ -82,6 +82,10 @@ chown "$app:$app" "$install_dir/web/config.inc.php"
 ###
 ### ynh_replace_string --match_string="match_string" --replace_string="replace_string" --target_file="$install_dir/config.inc.php"
 ### ynh_store_file_checksum --file="$install_dir/config.inc.php"
+
+ynh_config_add --template="config-ynh.inc.php" --destination="$install_dir/web/config-ynh.inc.php"
+chmod 400 "$install_dir/web/config-ynh.inc.php"
+chown "$app:$app" "$install_dir/web/config-ynh.inc.php"
 
 #=================================================
 # SYSTEM CONFIGURATION

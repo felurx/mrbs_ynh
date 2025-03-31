@@ -46,7 +46,7 @@ ynh_script_progression "Installing dependencies..."
 #=================================================
 ynh_script_progression --message="Upgrading source files..."
 
-ynh_setup_source --dest_dir="$install_dir" --full_replace --keep="config.inc.php"
+ynh_setup_source --dest_dir="$install_dir" --full_replace --keep="web/config.inc.php" --keep "web/config-ynh.inc.php"
 
 # $install_dir will automatically be initialized with some decent
 # permission by default... however, you may need to recursively reapply
@@ -64,6 +64,15 @@ ynh_script_progression "Upgrading system configurations related to $app..."
 ynh_config_add_phpfpm
 
 ynh_config_add_nginx
+
+#=================================================
+# UPDATE APP CONFIGURATIONS
+#=================================================
+ynh_script_progression "Upgrading app configurations for $app..."
+
+# Upgrade/overwrite config-ynh.inc.php
+ynh_backup_if_checksum_is_different "$install_dir/web/config-ynh.inc.php"
+ynh_config_add --template="config-ynh.inc.php" --destination="$install_dir/web/config-ynh.inc.php"
 
 #=================================================
 # END OF SCRIPT
