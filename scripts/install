@@ -54,6 +54,7 @@ chown -R $app:www-data "$install_dir"
 ynh_script_progression "Adding app's configuration file..."
 
 timezone="$(cat /etc/timezone)"
+ynh_app_setting_set --key=timezone --value="$timezone"
 
 ### You can add specific configuration files.
 ###
