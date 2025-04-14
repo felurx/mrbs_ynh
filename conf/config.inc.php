@@ -2,7 +2,7 @@
 
 /* This is the config for MRBS.
  * Feel free to edit this file to customize your install.
- * It already includes some of the most important settings.
+ * It already includes a few of the most important settings.
  * See systemdefaults.inc.php and areadefaults.inc.php for more,
  * you can copy lines from there and paste them here.
  */
@@ -15,6 +15,7 @@ require "__INSTALL_DIR__/web/config-ynh.inc.php";
    to change the default configuration. Do _NOT_ modify systemdefaults.inc.php
    or areadefaults.inc.php.  */
 
+$mrbs_company = "Your org";
 $default_name_display_name = true;
 $weekstarts = 1;
 $view_week_number = true;
