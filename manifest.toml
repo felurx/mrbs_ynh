@@ -8,7 +8,7 @@ name = "MRBS"
 description.en = "Meeting Room Booking System - Book rooms or other resources"
 description.fr = "TODO"
 
-version = "1.11.6~ynh1"
+version = "1.12.1~ynh1"
 
 maintainers = ["felurx"]
 
@@ -24,9 +24,9 @@ code = "https://github.com/meeting-room-booking-system/mrbs-code"
 yunohost = '>= 11.2.30'
 helpers_version = "2.1"
 # List of supported archs using the dpkg --print-architecture nomenclature (amd64/i386/armhf/arm64), for example: ["amd64", "i386']
-architectures = "all" 
+architectures = "all"
 multi_instance = "true"
-ldap = "true" 
+ldap = "true"
 sso = "true"
 disk = "50M"
 ram.build = "50M"
@@ -67,8 +67,8 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://github.com/meeting-room-booking-system/mrbs-code/archive/refs/tags/v1.11.6.tar.gz"
-        sha256 = "9a647f4236eb30c07783e42078a79480c95684ac5ff5f0c07b430c8c696377d4"
+        url = "https://github.com/meeting-room-booking-system/mrbs-code/archive/refs/tags/v1.12.1.tar.gz"
+        sha256 = "0c5f1270c0ec3d298bc5d4e2d53c01dfe7e193a14cb96a8f5ecc92117e214823"
 
         # You might want to add an "autoupdate strategy" setting to that your app receive automated pull request with each new update, which also trigger automated testing.
         autoupdate.strategy = "latest_github_release"
@@ -81,8 +81,8 @@ ram.runtime = "50M"
 
     [resources.apt]
     # This will automatically install/uninstall the following apt packages
-    # and implicitly define the $php_version setting as 8.3 (if php8.3-foobar dependencies are listed)
-    packages = "php8.3, php8.3-common, php8.3-intl, php8.3-pgsql, php8.3-ldap, postgresql"
+    # and implicitly define the $php_version setting as 8.4 (if php8.4-foobar dependencies are listed)
+    packages = "php8.4, php8.4-common, php8.4-intl, php8.4-pgsql, php8.4-ldap, postgresql"
 
     [resources.database]
     # This will automatically provision/deprovision a database and store the corresponding credentials in settings $db_user, $db_name, $db_pwd
