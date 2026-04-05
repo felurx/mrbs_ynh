@@ -6,7 +6,7 @@ id = "mrbs"
 name = "MRBS"
 
 description.en = "Meeting Room Booking System - Book rooms or other resources"
-description.fr = "TODO"
+description.fr = "Système de réservation de salles de réunion : réservez des salles ou autres dispositifs" # Thanks miro5001 :)
 
 version = "1.12.1~ynh1"
 
